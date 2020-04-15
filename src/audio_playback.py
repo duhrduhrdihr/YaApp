@@ -1,7 +1,10 @@
 import simpleaudio as sa
+from os.path import join, relpath
+from os import listdir
+from random import choice
 
 
-yaaap_file = ".\\audio\\01.wav"
+YAAAP_ROOT = relpath('audio')
 
 
 def play_audio(yaaap):
@@ -11,4 +14,12 @@ def play_audio(yaaap):
     play_obj.wait_done()
 
 
-# play_audio(yaaap_file)
+def pick_random_yaaap():
+    files = listdir(YAAAP_ROOT)
+    picked_yaaap = choice(files)
+
+    return join(YAAAP_ROOT, picked_yaaap)
+
+
+yaaap = pick_random_yaaap()
+play_audio(yaaap)
