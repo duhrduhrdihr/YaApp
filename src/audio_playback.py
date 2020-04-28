@@ -24,5 +24,6 @@ def pick_random_yaaap():
     return path.join(YAAAP_ROOT, picked_yaaap)
 
 
-yaaap = pick_random_yaaap()
-play_audio(yaaap)
+def play_yaaap():
+    yaaap = pick_random_yaaap()
+    play_audio(yaaap)
